@@ -1,5 +1,5 @@
 import React from 'react';
 
 export default function OrganizationPage() {
-    return <div>OrganizationPzdddddage</div>;
+    return <div>Alo anh Binh đẹp trai</div>;
 }
