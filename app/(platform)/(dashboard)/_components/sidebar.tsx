@@ -27,6 +27,7 @@ export default function SideBar({
             infinite: true,
         }, //userMemberships dùng để lấy thông tin các organization là user tham gia
     });
+    //Cái defaultAccordionValue dùng để lấy ds các organization đang được mở
     const defaultAccordionValue: string[] = Object.keys(expanded).reduce(
         (acc: string[], key: string) => {
             if (expanded[key]) {
