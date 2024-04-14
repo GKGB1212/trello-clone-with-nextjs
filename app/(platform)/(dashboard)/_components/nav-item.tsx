@@ -10,6 +10,7 @@ import { cn } from '@/lib/utils';
 import Image from 'next/image';
 import { Activity, CreditCard, Layout, Settings } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { Skeleton } from '@/components/ui/skeleton';
 
 export type Oranization = {
     id: string;
@@ -100,3 +101,13 @@ export default function NavItem({
         </AccordionItem>
     );
 }
+NavItem.Skeleton = function SkeletonNavItem() {
+    return (
+        <div className="flex items-center gap-x-2">
+            <div className=" relative h-10 w-10 shrink-0">
+                <Skeleton className=" absolute h-full w-full" />
+            </div>
+            <Skeleton className="h-10 w-full" />
+        </div>
+    );
+};
