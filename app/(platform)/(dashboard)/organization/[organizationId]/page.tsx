@@ -1,4 +1,3 @@
-import { create } from '@/actions/create-board';
 import { Button } from '@/components/ui/button';
 import { db } from '@/lib/db';
 import React from 'react';
