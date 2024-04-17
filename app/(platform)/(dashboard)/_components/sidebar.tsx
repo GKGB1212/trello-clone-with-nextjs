@@ -37,8 +37,6 @@ export default function SideBar({
         },
         []
     );
-    console.log('binh', defaultAccordionValue);
-    console.log('binh2', expanded);
     const onExpand = (id: string) => {
         setExpanded((curr) => ({
             ...curr,
