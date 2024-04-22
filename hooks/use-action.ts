@@ -1,5 +1,6 @@
 import { ActionState, FieldErrors } from '@/lib/create-safe-action';
 import { useCallback, useState } from 'react';
+import { toast } from 'sonner';
 
 type Action<TInput, TOutput> = (
     data: TInput
@@ -32,18 +33,16 @@ export const useAction = <TInput, TOutput>(
                 if (!result) {
                     return;
                 }
-
-                if (result.fieldErrors) {
-                    setFieldErrors(result.fieldErrors);
-                }
+                setFieldErrors(result.fieldErrors);
                 if (result.error) {
                     setError(result.error);
                     options.onError?.(result.error);
+                    toast.error(error);
                 }
                 if (result.data) {
-                    setFieldErrors(undefined);
                     setData(result.data);
                     options.onSuccess?.(result.data);
+                    toast.success('Board created!');
                 }
             } finally {
                 setIsLoading(false);
